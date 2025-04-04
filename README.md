@@ -25,3 +25,15 @@ config/config.json - change mysql password and database
 
 cd src 
 npx sequelize db:create 
+
+- DB design
+    - Airplane table
+    - flight
+    - Airport
+    - city
+
+- a flight belongs to an airport but one airplane can be used in multiple flights
+
+- a city has many airports but one airport belongs to a city
+
+- one airport can have many flights, but a flight belongs to one airport 
