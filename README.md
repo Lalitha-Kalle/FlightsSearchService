@@ -37,3 +37,12 @@ npx sequelize db:create
 - a city has many airports but one airport belongs to a city
 
 - one airport can have many flights, but a flight belongs to one airport 
+
+
+
+Airport model
+
+tables 
+    - City
+    - Airport 
+    - relationship : City has many airports but airport belongs to one city (one to many)
