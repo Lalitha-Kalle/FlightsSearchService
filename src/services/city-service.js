@@ -1,4 +1,4 @@
-const CityRepository = require("../repository/city-repository")
+const { CityRepository } = require("../repository/index")
 
 class CityService {
   constructor() {
@@ -17,7 +17,7 @@ class CityService {
 
   async deleteCity(cityId) {
     try {
-      const response = await this.cityRepository.deleteCityCity(cityId);
+      const response = await this.cityRepository.deleteCity(cityId);
       return response;
     } catch(error) {
       console.log("something went wrong in service layer");
@@ -37,7 +37,7 @@ class CityService {
 
   async getCity(cityId) {
     try {
-      const city = await this.cityRepository.getCity(data);
+      const city = await this.cityRepository.getCity(cityId);
       return city;
     } catch(error) {
       console.log("something went wrong in service layer");
@@ -45,3 +45,5 @@ class CityService {
     }
   }
 }
+
+module.exports = CityService

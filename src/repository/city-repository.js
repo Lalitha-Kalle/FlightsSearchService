@@ -1,6 +1,6 @@
-const { where } = require('sequelize');
+// const { where } = require('sequelize');
 const { City } = require('../models/index');
-const city = require('../models/city');
+// const city = require('../models/city');
 
 class CityRepository {
   async createCity({ name }) {
