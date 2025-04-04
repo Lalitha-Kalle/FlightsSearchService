@@ -46,3 +46,7 @@ tables
     - City
     - Airport 
     - relationship : City has many airports but airport belongs to one city (one to many)
+
+
+-src/seeders folder is used to put some starting values inside database 
+npx sequelize seed:generate --name add-airports
