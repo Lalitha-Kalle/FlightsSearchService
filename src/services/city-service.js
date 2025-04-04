@@ -1,3 +1,4 @@
+const e = require("express");
 const { CityRepository } = require("../repository/index")
 
 class CityService {
@@ -42,6 +43,16 @@ class CityService {
     } catch(error) {
       console.log("something went wrong in service layer");
       throw(error);
+    }
+  }
+
+  async getAllCities() {
+    try {
+      const cities = this.cityRepository.getAllCities();
+      return cities;
+    } catch (error) {
+      console.log(error);
+      throw {error};
     }
   }
 }
