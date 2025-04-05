@@ -37,8 +37,8 @@ const setupAndStartServer = async () => {
       // const airports = await city.getAirports() // SELECT `id`, `name`, `address`, `cityId`, `createdAt`, `updatedAt` FROM `airports` AS `airport` WHERE `airport`.`cityId` = 12;
       // console.log(city, airports)
     
-      const airplane = await Airplane.findAll();
-      console.log(airplane)
+      // const airplane = await Airplane.findAll();
+      // console.log(airplane)
   })
 }
 
