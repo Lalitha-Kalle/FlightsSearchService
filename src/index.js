@@ -4,9 +4,10 @@ const express = require("express")
 const { PORT } = require('./config/serverConfig')
 const ApiRoutes = require('./routes/index')
 
+const db = require("./models/index")
 const { City, airport} = require('./models/index')
-// const airport = require("./models/airport")
-// const City = require("./models/city")
+const { Airplane } = require("./models/index")
+
 
 const setupAndStartServer = async () => {
   const app = express()
@@ -24,16 +25,20 @@ const setupAndStartServer = async () => {
     //   include: City
     // })
     // console.log(airports)
+    if(process.env.SYNC_DB) {
+      db.sequelize.sync({alter: true})
+    }
     
-    // db.sequelize.sync({alter: true})
+      // const city = await City.findOne({
+      //   where: {
+      //     id: 12
+      //   },
+      // })
+      // const airports = await city.getAirports() // SELECT `id`, `name`, `address`, `cityId`, `createdAt`, `updatedAt` FROM `airports` AS `airport` WHERE `airport`.`cityId` = 12;
+      // console.log(city, airports)
     
-      const city = await City.findOne({
-        where: {
-          id: 12
-        },
-      })
-      const airports = await city.getAirports() // SELECT `id`, `name`, `address`, `cityId`, `createdAt`, `updatedAt` FROM `airports` AS `airport` WHERE `airport`.`cityId` = 12;
-      console.log(city, airports)
+      const airplane = await Airplane.findAll();
+      console.log(airplane)
   })
 }
 
