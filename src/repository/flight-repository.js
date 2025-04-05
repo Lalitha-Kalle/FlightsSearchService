@@ -11,3 +11,5 @@ class FlightRepository {
     }
   }
 }
+
+module.exports = FlightRepository
